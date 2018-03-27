@@ -1,0 +1,216 @@
+$mobile: new-breakpoint(max-width 985px);
+
+/**********************************
+* Body *
+**********************************/
+body{
+  @include position(absolute); //position
+  @include size(100%); //width height 100%
+  @include hidden; //overflow
+  font-size: LaPoliceDe(taille,debase);
+  line-height: 20px;
+}
+
+#section > *{
+  @include size(null 100%); //width 0% height 100%
+}
+
+#section #side-left{
+  @include position( absolute); //position
+  @include size(100% null); //width 100% height null
+  @include hidden; //overflow
+}
+
+#section{
+  @include size(null 100%); //width 0% height 100%
+  background-color: LaCouleurDe(fond,sombre);
+}
+
+#section #side-left > img {
+    @include size(null 100%); //width 0% height 100%
+    opacity: 0.6;
+}
+
+/**********************************
+* SIDE LEFT *
+**********************************/
+.box-content {
+    @include size(500px null); //width 500px height null
+}
+
+.p-l-20 {
+  @include padding( null  null null 20px);
+}
+
+.m-b-20 {
+  @include margin( null  null 20px null);
+}
+
+.box-bottom {
+    @include position(absolute, null null 0 null); // position Bottom 0
+}
+
+.box-small, .box-small {
+  font-size: LaPoliceDe(taille,petit);
+  line-height: 18px;
+}
+
+/**********************************
+* STYLE CSS *
+**********************************/
+.text-white {
+    color: LaCouleurDe(texte,debase);
+}
+
+.semi-bold {
+    font-weight: 400 !important;
+}
+
+h2 {
+    font-size: LaPoliceDe(taille,grand);
+    line-height: 40px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    @include margin(10px 0);
+    font-family: "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: $helvetica;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    font-weight: 300;
+    color: LaCouleurDe(texte,sombre);
+}
+
+.h1, .h2, .h3, h1, h2, h3 {
+    @include margin(20px null 10px null)
+}
+
+p {
+    display: block;
+    font-size: LaPoliceDe(taille,debase);
+    font-weight: LaPoliceDe(style,debase);
+    letter-spacing: 0.01em;
+    line-height: 22px;
+    @include margin(null null 10px null);
+    font-size: LaPoliceDe(taille,debase);
+    font-style: LaPoliceDe(aspect,debase);
+    white-space: LaPoliceDe(variation,debase);
+}
+
+p {
+  @include margin( null null 10px null);
+}
+
+/**********************************
+* SIDE RIGHT *
+**********************************/
+#side-right{
+  @include position(relative); // position Bottom 0
+  @include size(496px 100%); //width height 100%
+  display: block;
+  float: right;
+  background-color: LaCouleurDe(fond,debase);
+  @include media($mobile) {
+    @include size(100% null); //width height
+    overflow: auto;
+}
+}
+
+.p-t-35 {
+  @include padding( 35px null null null);
+}
+
+.title{
+  font-size: 20px;
+  font-weight: LaPoliceDe(style,gras);
+}
+
+.bloc_form {    //Bourbon - padding
+   @include padding(50px 50px 0px 50px);
+   @include margin(30px 20px 0px 20px);
+ }
+
+/*CSS - Formulaire de contact*/
+.p-t-15 {
+    @include padding( 15px null null null);
+}
+
+#form{
+}
+
+.form-group{
+}
+
+.form-group-default{
+}
+
+.controls{
+
+}
+.form-control{
+
+}
+
+.box-valid{
+  @include outer-container(100%);
+}
+
+.span-columns{
+@include span-columns(6);
+  @include media($mobile) {
+    @include span-columns(6);
+    @include padding(0px);
+    @include hidden; //overflow
+
+  }
+}
+
+.no-padding:after{
+  @include media($mobile) {
+    @include span-columns(6);
+    white-space:LaPoliceDe(variation,supligne);
+    content: ""; /* Important, sinon l'élément n'est pas généré. */
+    display: table;
+    clear: both;
+  }
+}
+
+.padding{
+  @include padding(null 15px null null);
+  text-align: LaPoliceDe(alignement,droite);
+  @include media($mobile) {
+    @include span-columns(6);
+    @include padding(null 15px null null);
+    text-align: right;
+    text-align: LaPoliceDe(alignement,droite);
+  }
+}
+
+.span-columns{
+@include span-columns(6);
+  @include media($mobile) {
+    @include span-columns(6);
+    @include padding(0px);
+    @include hidden; //overflow
+
+  }
+}
+
+.no-padding:after{
+  @include media($mobile) {
+    @include span-columns(6);
+    white-space:LaPoliceDe(variation,supligne);
+    content: ""; /* Important, sinon l'élément n'est pas généré. */
+    display: table;
+    clear: both;
+  }
+}
+
+.padding{
+  @include media($mobile) {
+    @include span-columns(6);
+    @include padding(null 15px null null);
+    text-align: LaPoliceDe(alignement,droite);
+  }
+}

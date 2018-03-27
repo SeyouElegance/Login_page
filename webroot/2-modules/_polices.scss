@@ -1,0 +1,12 @@
+$police: (
+	taille: (petit: 89%, debase: 13px, grand: 28px),
+	style: (debase: normal, gras: bold),
+	aspect: (it: italic, debase: normal, ob: oblique),
+	variation: (debase: normal, supligne: nowrap),
+  alignement: (gauche: left, droite: right),
+);
+
+
+@function LaPoliceDe ($element, $variante: debase){
+	@return map-get(map-get($police, $element), $variante);
+}

@@ -1,0 +1,10 @@
+$couleurs: (
+	fond: (debase: #FFFFFF, sombre: #6d5cae),
+	texte: (clair: #B9B9B9, debase: #FFFFFF, sombre: #626262),
+	lien: (debase: #3b4752),
+  bouton: (clair: #8A7DBE, debase: #8a7dbe)
+);
+
+@function LaCouleurDe ($element, $variante: debase){
+	@return map-get(map-get($couleurs, $element), $variante);
+}
